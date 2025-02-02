@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
 @import "tailwindcss";
 
 
@@ -11,7 +12,6 @@
   --color-accent: #ffa94d;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
 
 * {
   margin: 0;
@@ -48,7 +48,8 @@ body {
   margin-bottom: 4rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
 }
 
 .error {
@@ -90,6 +91,12 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.input-item {
+  /* font-size: 100%; */
+  /* padding: 1rem; */
+
 }
 
 .progress {
