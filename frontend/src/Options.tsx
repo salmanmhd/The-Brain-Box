@@ -1,4 +1,7 @@
-function Options({ question, dispatch, answer }: any) {
+import { useQuestionContext } from './context/QuestionContext';
+
+function Options({ question }: { question: any }) {
+  const { dispatch, answer } = useQuestionContext();
   const hasAnswered = answer !== null;
 
   return (

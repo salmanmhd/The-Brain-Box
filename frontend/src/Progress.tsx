@@ -1,10 +1,12 @@
-function Progress({
-  index,
-  numQuestions,
-  points,
-  maxPossiblePoints,
-  answer,
-}: any) {
+import { useQuestionContext } from './context/QuestionContext';
+
+function Progress() {
+  const { index, numQuestions, points, answer, questions } =
+    useQuestionContext();
+  const maxPossiblePoints = questions.reduce(
+    (prev: any, cur: any) => prev + cur.points,
+    0
+  );
   return (
     <header className='progress'>
       <progress max={numQuestions} value={index + Number(answer !== null)} />
