@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
+import { useQuestionContext } from './context/QuestionContext';
 
-function Timer({ dispatch, secondsRemaining }: any) {
-  const mins = Math.floor(secondsRemaining / 60);
-  const seconds = secondsRemaining % 60;
+function Timer() {
+  const { dispatch, secondsRemaining } = useQuestionContext();
 
   useEffect(
     function () {
@@ -14,6 +14,10 @@ function Timer({ dispatch, secondsRemaining }: any) {
     },
     [dispatch]
   );
+
+  if (secondsRemaining === null) return null;
+  const mins = Math.floor(secondsRemaining / 60);
+  const seconds = secondsRemaining % 60;
 
   return (
     <div className='timer'>

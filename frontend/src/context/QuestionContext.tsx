@@ -3,16 +3,18 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 const initialState = {
   questions: [],
   // 'loading', 'error', 'ready', 'active', 'finished'
-  status: 'loading',
+  status: 'idle',
   index: 0,
+  topic: '',
   answer: null,
   points: 0,
   highscore: 0,
-  secondsRemaining: null,
+  secondsRemaining: 0,
 };
 
 interface QuestionContextType {
   questions: any[];
+  topic: '';
   status: string;
   index: number;
   answer: null | number;
@@ -37,12 +39,16 @@ function questionReducer(state: any, action: any) {
         ...state,
         questions: action.payload,
         status: 'ready',
+        topic: action.topic,
       };
     case 'dataFailed':
       return {
         ...state,
         status: 'error',
       };
+
+    case 'loading':
+      return { ...state, status: 'loading' };
     case 'start':
       return {
         ...state,
@@ -86,7 +92,16 @@ function questionReducer(state: any, action: any) {
 
 export function QuestionProvider({ children }: { children: React.ReactNode }) {
   const [
-    { questions, status, index, answer, points, highscore, secondsRemaining },
+    {
+      questions,
+      topic,
+      status,
+      index,
+      answer,
+      points,
+      highscore,
+      secondsRemaining,
+    },
     dispatch,
   ] = useReducer(questionReducer, initialState);
 
@@ -97,30 +112,12 @@ export function QuestionProvider({ children }: { children: React.ReactNode }) {
     0
   );
 
-  useEffect(
-    function () {
-      async function fetchData() {
-        try {
-          const res = await fetch(URL);
-          const data = await res.json();
-          console.log(data);
-          dispatch({ type: 'dataReceived', payload: data.questions });
-        } catch (error) {
-          console.log('there is some issue while loading data', error);
-          dispatch({ type: 'dataFailed' });
-        }
-      }
-
-      fetchData();
-    },
-    [URL, dispatch]
-  );
-
   return (
     <QuestionContext.Provider
       value={{
         questions,
         status,
+        topic,
         index,
         answer,
         points,

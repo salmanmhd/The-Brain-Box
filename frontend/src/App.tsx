@@ -12,6 +12,7 @@ import FinishScreen from './FinishScreen';
 import Footer from './Footer';
 import Timer from './Timer';
 import { QuestionContext, useQuestionContext } from './context/QuestionContext';
+import Home from './Home';
 
 export default function App() {
   const { status } = useQuestionContext();
@@ -21,6 +22,7 @@ export default function App() {
       <Header />
 
       <Main>
+        {status === 'idle' && <Home />}
         {status === 'loading' && <Loader />}
         {status === 'error' && <Error />}
         {status === 'ready' && <StartScreen />}

@@ -99,6 +99,16 @@ h4 {
 
 }
 
+.start-btn {
+  margin-top: 55px;
+}
+
+.welcome {
+  font-size: 45px;
+  width: 65rem;
+  margin-bottom: 50px;
+}
+
 .progress {
   margin-bottom: 4rem;
   display: grid;
