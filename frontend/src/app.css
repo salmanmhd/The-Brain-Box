@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
 
-
+/* Variables */
 :root {
     --color-darkest: #343a40;
     --color-dark: #495057;
@@ -11,7 +11,7 @@
     --color-accent: #ffa94d;
 }
 
-
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -143,37 +143,95 @@ progress {
     border-radius: 100px;
 }
 
+.finish-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.result-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+}
+
+.result .emoji {
+    font-size: 5.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.score-text {
+    text-align: center;
+}
+
+.highscore {
+    font-size: 1.8rem;
+    color: var(--color-medium);
+    margin-top: 1rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 1.6rem;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Button Styles */
 .btn {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: inherit;
     color: inherit;
-    font-size: 2rem;
+    font-size: 1.8rem;
     border: 2px solid var(--color-dark);
     background-color: var(--color-dark);
     padding: 1.2rem 2.4rem;
     cursor: pointer;
     border-radius: 100px;
-    transition: 0.3s;
-}
-
-.btn:not([disabled]):hover {
-    background-color: var(--color-darkest);
-}
-
-.btn-option:not([disabled]):hover {
-    transform: translateX(1.2rem);
-}
-
-.btn[disabled]:hover {
-    cursor: not-allowed;
+    transition: all 0.3s;
+    min-width: 12rem;
 }
 
 .btn-ui {
     float: right;
+    background-color: var(--color-theme);
+    border-color: var(--color-theme);
 }
 
 .btn-left {
     float: left;
+}
+
+.btn:not([disabled]):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:not([disabled]):active {
+    transform: translateY(0);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 .options {
@@ -185,45 +243,41 @@ progress {
 
 .btn-option {
     width: 100%;
+    margin-bottom: 0.8rem;
     text-align: left;
+}
+
+.btn-option:not([disabled]):hover {
+    transform: translateX(1.2rem);
 }
 
 .btn-option.correct {
     background-color: var(--color-theme);
     border: 2px solid var(--color-theme);
     color: var(--color-light);
+    transform: translateX(1.2rem);
 }
 
 .btn-option.wrong {
     background-color: var(--color-accent);
     border: 2px solid var(--color-accent);
     color: var(--color-darkest);
+    opacity: 0.7;
 }
 
 .answer {
     transform: translateX(2rem);
+    color: var(--color-theme);
+    font-weight: 600;
 }
 
-.result {
-    background-color: var(--color-theme);
-    color: var(--color-light);
-    border-radius: 100px;
-    text-align: center;
-    padding: 2rem 0;
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 1.6rem;
-}
-
-.result span {
-    font-size: 2.2rem;
-    margin-right: 4px;
-}
-
-.highscore {
-    font-size: 1.8rem;
-    text-align: center;
-    margin-bottom: 4.8rem;
+/* Question-specific button container */
+.question-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.6rem;
+    margin-top: 2.4rem;
+    width: 100%;
 }
 
 .loader-container {
@@ -291,4 +345,146 @@ progress {
 .counter * {
     font-size: inherit;
     padding: 0.8rem;
+}
+
+.home-container {
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 80vh; */
+}
+
+.welcome {
+    font-size: 4.5rem;
+    max-width: 65rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 56.25%; /* 9px */
+    }
+
+    .main {
+        width: 100%;
+        max-width: 50rem;
+        padding: 0 2rem;
+    }
+
+    .app-header {
+        width: 100%;
+        max-width: 66rem;
+        padding: 0 2rem;
+    }
+
+    h1 {
+        font-size: 4.2rem;
+    }
+
+    .welcome {
+        font-size: 3.6rem;
+        margin-bottom: 3rem;
+        width: 100%;
+        max-width: 50rem;
+    }
+
+    .home-container {
+        padding: 2rem 1.5rem;
+        /* min-height: 70vh; */
+    }
+
+    .input-item {
+        width: 100% !important;
+        max-width: 32rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 50%; /* 8px */
+    }
+
+    body {
+        padding: 1.2rem;
+    }
+
+    .app-header {
+        margin-bottom: 1.5rem;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        padding: 1.2rem 2rem;
+        font-size: 1.6rem;
+        min-height: 4.8rem;
+    }
+
+    .btn-ui {
+        min-width: 10rem;
+    }
+
+    .question-buttons {
+        margin-top: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    .btn-option {
+        padding: 1.4rem 1.8rem;
+        font-size: 1.6rem;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        min-height: 5.6rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .options {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .btn-option.correct {
+        transform: translateX(0.8rem);
+    }
+
+    .btn-option.wrong {
+        opacity: 0.6;
+    }
+
+    .answer {
+        transform: translateX(1.2rem);
+    }
+
+    /* Improve touch feedback */
+    .btn:active {
+        transform: translateY(1px) !important;
+        opacity: 0.9;
+    }
+
+    .btn-option:not([disabled]):hover {
+        transform: translateX(0.8rem);
+    }
+
+    .btn-option:active {
+        transform: translateX(0.4rem) !important;
+    }
 }

@@ -18,12 +18,9 @@ export default function InputItems() {
           topic ? topic : 'react'
         }, ${difficulty}, ${numQuestions}`,
       });
-      console.log(data.result);
       const questions = await JSON.parse(data.result);
       dispatch({ type: 'dataReceived', payload: questions.questions, topic });
-      console.log(questions);
     } catch (error) {
-      console.log(`there is some issue while fetching the data`, error);
       dispatch({ type: 'dataFailed' });
     }
   }
