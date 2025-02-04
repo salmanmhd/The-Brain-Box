@@ -107,7 +107,6 @@ export function QuestionProvider({ children }: { children: React.ReactNode }) {
     dispatch,
   ] = useReducer(questionReducer, initialState);
 
-  const URL = import.meta.env.VITE_BASE_URL;
   const numQuestions = questions.length;
   const maxPossiblePoints = questions.reduce(
     (prev: any, cur: any) => prev + cur.points,

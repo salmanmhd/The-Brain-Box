@@ -1,5 +1,3 @@
-import { useContext, useEffect, useReducer } from 'react';
-
 import Header from './Header';
 import Main from './Main1';
 import Loader from './Loader';
@@ -11,7 +9,7 @@ import Progress from './Progress';
 import FinishScreen from './FinishScreen';
 import Footer from './Footer';
 import Timer from './Timer';
-import { QuestionContext, useQuestionContext } from './context/QuestionContext';
+import { useQuestionContext } from './context/QuestionContext';
 import Home from './Home';
 import './app.css';
 

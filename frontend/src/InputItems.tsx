@@ -22,6 +22,7 @@ export default function InputItems() {
       dispatch({ type: 'dataReceived', payload: questions.questions, topic });
     } catch (error) {
       dispatch({ type: 'dataFailed' });
+      console.log(error);
     }
   }
   return (
