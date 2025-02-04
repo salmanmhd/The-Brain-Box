@@ -39,7 +39,7 @@ export default function InputItems() {
         <input
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
-          className='rounded-full border border-gray-300 w-[22rem] h-[4rem] px-6 text-lg focus:ring-2 focus:ring-gray-800 outline-none'
+          className='rounded-full border border-gray-300 w-[22rem] h-[4rem] px-8 text-xl focus:ring-2 focus:ring-gray-800 outline-none'
           type='text'
           placeholder='Enter the quiz topic'
         />
@@ -48,27 +48,27 @@ export default function InputItems() {
           <select
             value={numQuestions}
             onChange={(e) => setNumQuestions(Number(e.target.value))}
-            className='rounded-full border border-gray-300 w-full h-[4rem] px-6 text-lg  appearance-none focus:ring-2 focus:ring-gray-700 outline-none cursor-pointer'
+            className='rounded-full border border-gray-300 w-full h-[4rem] px-8 text-xl appearance-none focus:ring-2 focus:ring-gray-700 outline-none cursor-pointer bg-white'
           >
-            <option className='text-gray-700 text-lg py-2'>
+            <option className='text-gray-700 text-xl p-4'>
               Choose number of Qs
             </option>
-            <option className='text-gray-900 text-lg py-2 ' value='5'>
+            <option className='text-gray-900 text-xl p-4' value='5'>
               5
             </option>
-            <option className='text-gray-900 text-lg py-2' value='10'>
+            <option className='text-gray-900 text-xl p-4' value='10'>
               10
             </option>
-            <option className='text-gray-900 text-lg py-2' value='15'>
+            <option className='text-gray-900 text-xl p-4' value='15'>
               15
             </option>
-            <option className='text-gray-900 text-lg py-2' value='20'>
+            <option className='text-gray-900 text-xl p-4' value='20'>
               20
             </option>
-            <option className='text-gray-900 text-lg py-2' value='25'>
+            <option className='text-gray-900 text-xl p-4' value='25'>
               25
             </option>
-            <option className='text-gray-900 text-lg py-2' value='30'>
+            <option className='text-gray-900 text-xl p-4' value='30'>
               30
             </option>
           </select>
@@ -79,18 +79,18 @@ export default function InputItems() {
           <select
             value={difficulty}
             onChange={(e) => setDifficulty(e.target.value)}
-            className='rounded-full border border-gray-300 w-full h-[4rem] px-6 text-lg  appearance-none focus:ring-2 focus:ring-gray-700 outline-none cursor-pointer'
+            className='rounded-full border border-gray-300 w-full h-[4rem] px-8 text-xl appearance-none focus:ring-2 focus:ring-gray-700 outline-none cursor-pointer bg-white'
           >
-            <option className='text-gray-700 text-lg py-2'>
+            <option className='text-gray-700 text-xl p-4'>
               Choose Difficulty
             </option>
-            <option className='text-gray-900 text-lg py-2' value='Easy'>
+            <option className='text-gray-900 text-xl p-4' value='Easy'>
               Easy
             </option>
-            <option className='text-gray-900 text-lg py-2' value='Medium'>
+            <option className='text-gray-900 text-xl p-4' value='Medium'>
               Medium
             </option>
-            <option className='text-gray-900 text-lg py-2' value='Hard'>
+            <option className='text-gray-900 text-xl p-4' value='Hard'>
               Hard
             </option>
           </select>

@@ -34,6 +34,8 @@ const SECS_PER_QUESTION = 30;
 
 function questionReducer(state: any, action: any) {
   switch (action.type) {
+    case 'home':
+      return { ...initialState };
     case 'dataReceived':
       return {
         ...state,
