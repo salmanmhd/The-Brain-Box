@@ -4,16 +4,14 @@ import questions from './questions.json';
 import cors from 'cors';
 import { generateResult } from './ai';
 dotenv.config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.get('/', async (req, res) => {
   try {
-    res.status(200).json({
-      questions: questions.questions,
-    });
+    res.send('running up and fine');
   } catch (error) {
     res.status(400).json({
       msg: 'something went wrong',
