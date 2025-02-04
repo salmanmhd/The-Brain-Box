@@ -14,19 +14,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
-const questions_json_1 = __importDefault(require("./questions.json"));
 const cors_1 = __importDefault(require("cors"));
 const ai_1 = require("./ai");
 dotenv_1.default.config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        res.status(200).json({
-            questions: questions_json_1.default.questions,
-        });
+        res.send('running up and fine');
     }
     catch (error) {
         res.status(400).json({
