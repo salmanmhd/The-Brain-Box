@@ -13,6 +13,7 @@ import Footer from './Footer';
 import Timer from './Timer';
 import { QuestionContext, useQuestionContext } from './context/QuestionContext';
 import Home from './Home';
+import './app.css';
 
 export default function App() {
   const { status } = useQuestionContext();

@@ -39,7 +39,7 @@ export default function InputItems() {
         <input
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
-          className='rounded-full border border-gray-300 w-[22rem] h-[4rem] px-8 text-xl focus:ring-2 focus:ring-gray-800 outline-none'
+          className='input-item rounded-full border border-gray-300 w-[22rem] h-[4rem] px-8 text-xl focus:ring-2 focus:ring-gray-800 outline-none'
           type='text'
           placeholder='Enter the quiz topic'
         />
@@ -48,7 +48,7 @@ export default function InputItems() {
           <select
             value={numQuestions}
             onChange={(e) => setNumQuestions(Number(e.target.value))}
-            className='rounded-full border border-gray-300 w-full h-[4rem] px-8 text-xl appearance-none focus:ring-2 focus:ring-gray-700 outline-none cursor-pointer bg-white'
+            className='input-item rounded-full border border-gray-300 w-full h-[4rem] px-8 text-xl appearance-none focus:ring-2 focus:ring-gray-700 outline-none cursor-pointer '
           >
             <option className='text-gray-700 text-xl p-4'>
               Choose number of Qs
@@ -79,7 +79,7 @@ export default function InputItems() {
           <select
             value={difficulty}
             onChange={(e) => setDifficulty(e.target.value)}
-            className='rounded-full border border-gray-300 w-full h-[4rem] px-8 text-xl appearance-none focus:ring-2 focus:ring-gray-700 outline-none cursor-pointer bg-white'
+            className='input-item rounded-full border border-gray-300 w-full h-[4rem] px-8 text-xl appearance-none focus:ring-2 focus:ring-gray-700 outline-none cursor-pointer '
           >
             <option className='text-gray-700 text-xl p-4'>
               Choose Difficulty
